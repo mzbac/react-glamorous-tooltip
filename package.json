@@ -1,0 +1,40 @@
+{
+  "name": "react-glamorous-tooltip",
+  "version": "1.0.0",
+  "description": "react tooltip component",
+  "main": "lib/index.js",
+  "scripts": {
+    "prebuild": "rimraf lib/*",
+    "build": "babel --out-dir lib src",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mzbac/react-glamorous-tooltip.git"
+  },
+  "keywords": [
+    "react",
+    "tooltip",
+    "glamorous"
+  ],
+  "author": "anchen.li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mzbac/react-glamorous-tooltip/issues"
+  },
+  "homepage": "https://github.com/mzbac/react-glamorous-tooltip#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "glamor": "^2.20.40",
+    "glamorous": "^4.2.0"
+  }
+}
