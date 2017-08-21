@@ -102,140 +102,148 @@ const getContainerPosition = ({ position, arrow, targetElm, containerSize, posit
 };
 
 const ContainerDiv = glamorous.div((props) => {
-  const { transition, visible, style, ...restProps } = props;
-const { targetElm } = restProps;
-if (!targetElm) return { display: 'none' };
-const baseStyle = {
-    position: 'absolute',
-    padding: '5px',
-    background: '#fff',
-    boxShadow: '0 0 8px rgba(0,0,0,.3)',
-    borderRadius: '3px',
-    transition: `${transition} .3s ease-in-out, visibility .3s ease-in-out`,
-    opacity: visible ? 1 : 0,
-    visibility: visible ? 'visible' : 'hidden',
-    zIndex: 50,
-    ...style,
-  };
-const containerPosition = getContainerPosition(restProps);
-return { ...baseStyle, ...containerPosition };
-},
+    const { transition, visible, reposition, style, ...restProps } = props;
+    const { targetElm, position } = restProps;
+    if (!targetElm) return { display: 'none' };
+    const baseStyle = {
+      position: 'absolute',
+      padding: '5px',
+      background: '#fff',
+      boxShadow: '0 0 8px rgba(0,0,0,.3)',
+      borderRadius: '3px',
+      transition: `${transition} .3s ease-in-out, visibility .3s ease-in-out`,
+      opacity: visible ? 1 : 0,
+      visibility: visible ? 'visible' : 'hidden',
+      zIndex: 50,
+      ...style,
+    };
+    const containerPosition = getContainerPosition(restProps);
+    if (position === "left" && containerPosition.left < 0) {
+      reposition();
+    } else if (
+      position === "right" &&
+      window.innerWidth < containerPosition.left + targetElm.offsetWidth
+    ) {
+      reposition();
+    }
+    return { ...baseStyle, ...containerPosition };
+  },
 );
 
 const Arrow = glamorous.span((props) => {
-  const { fg, bg, position, arrow, arrowStyle, positionMargin } = props;
-const baseStyle = {
-  position: 'absolute',
-  content: '""',
-  transition: 'all .3s ease-in-out',
-};
-let fgStyle = {};
-let bgStyle = {};
-const newArrowStyle = { color: '#fff', borderColor: 'rgba(0,0,0,.4)', ...arrowStyle };
-if (fg) {
-  fgStyle.zIndex = 60;
-  const fgColorBorder = `10px solid ${newArrowStyle.color}`;
-  const fgTransBorder = '8px solid transparent';
-  const fgStyleLeftOrRightBase = {
-    top: '50%',
-    borderTop: fgTransBorder,
-    borderBottom: fgTransBorder,
-    marginTop: -7,
-  };
-  if (position === 'left') {
-    fgStyle = { ...fgStyle, ...fgStyleLeftOrRightBase, right: -10, borderLeft: fgColorBorder };
-  }
-  if (position === 'right') {
-    fgStyle = { ...fgStyle, ...fgStyleLeftOrRightBase, left: -10, borderRight: fgColorBorder };
-  }
-  if (position === 'left' || position === 'right') {
-    if (arrow === 'top') {
-      fgStyle.top = positionMargin;
-    }
-    if (arrow === 'bottom') {
-      fgStyle.top = null;
-      fgStyle.bottom = positionMargin - 7;
-    }
-  }
+    const { fg, bg, position, arrow, arrowStyle, positionMargin } = props;
+    const baseStyle = {
+      position: 'absolute',
+      content: '""',
+      transition: 'all .3s ease-in-out',
+    };
+    let fgStyle = {};
+    let bgStyle = {};
+    const newArrowStyle = { color: '#fff', borderColor: 'rgba(0,0,0,.4)', ...arrowStyle };
+    if (fg) {
+      fgStyle.zIndex = 60;
+      const fgColorBorder = `10px solid ${newArrowStyle.color}`;
+      const fgTransBorder = '8px solid transparent';
+      const fgStyleLeftOrRightBase = {
+        top: '50%',
+        borderTop: fgTransBorder,
+        borderBottom: fgTransBorder,
+        marginTop: -7,
+      };
+      if (position === 'left') {
+        fgStyle = { ...fgStyle, ...fgStyleLeftOrRightBase, right: -10, borderLeft: fgColorBorder };
+      }
+      if (position === 'right') {
+        fgStyle = { ...fgStyle, ...fgStyleLeftOrRightBase, left: -10, borderRight: fgColorBorder };
+      }
+      if (position === 'left' || position === 'right') {
+        if (arrow === 'top') {
+          fgStyle.top = positionMargin;
+        }
+        if (arrow === 'bottom') {
+          fgStyle.top = null;
+          fgStyle.bottom = positionMargin - 7;
+        }
+      }
 
-  const fgStyleTopOrBottomBase = {
-    left: '50%',
-    marginLeft: -10,
-    borderLeft: fgTransBorder,
-    borderRight: fgTransBorder,
-  };
-  if (position === 'top') {
-    fgStyle = { ...fgStyle, ...fgStyleTopOrBottomBase, bottom: -10, borderTop: fgColorBorder };
-  }
-  if (position === 'bottom') {
-    fgStyle = { ...fgStyle, ...fgStyleTopOrBottomBase, top: -10, borderBottom: fgColorBorder };
-  }
-  if (position === 'top' || position === 'bottom') {
-    if (arrow === 'right') {
-      fgStyle.left = null;
-      fgStyle.right = positionMargin + 1;
-      fgStyle.marginLeft = 0;
+      const fgStyleTopOrBottomBase = {
+        left: '50%',
+        marginLeft: -10,
+        borderLeft: fgTransBorder,
+        borderRight: fgTransBorder,
+      };
+      if (position === 'top') {
+        fgStyle = { ...fgStyle, ...fgStyleTopOrBottomBase, bottom: -10, borderTop: fgColorBorder };
+      }
+      if (position === 'bottom') {
+        fgStyle = { ...fgStyle, ...fgStyleTopOrBottomBase, top: -10, borderBottom: fgColorBorder };
+      }
+      if (position === 'top' || position === 'bottom') {
+        if (arrow === 'right') {
+          fgStyle.left = null;
+          fgStyle.right = positionMargin + 1;
+          fgStyle.marginLeft = 0;
+        }
+        if (arrow === 'left') {
+          fgStyle.left = positionMargin + 1;
+          fgStyle.marginLeft = 0;
+        }
+      }
+      return { ...baseStyle, ...fgStyle };
     }
-    if (arrow === 'left') {
-      fgStyle.left = positionMargin + 1;
-      fgStyle.marginLeft = 0;
+    if (bg) {
+      bgStyle.zIndex = 55;
+      const bgBorderColor = newArrowStyle.borderColor ? newArrowStyle.borderColor : 'transparent';
+      const bgColorBorder = `11px solid ${bgBorderColor}`;
+      const bgTransBorder = '9px solid transparent';
+      const bgStyleLeftOrRightBase = {
+        top: '50%',
+        borderTop: bgTransBorder,
+        borderBottom: bgTransBorder,
+        marginTop: -8,
+      };
+      if (position === 'left') {
+        bgStyle = { ...bgStyle, ...bgStyleLeftOrRightBase, right: -11, borderLeft: bgColorBorder };
+      }
+      if (position === 'right') {
+        bgStyle = { ...bgStyle, ...bgStyleLeftOrRightBase, left: -11, borderRight: bgColorBorder };
+      }
+      if (position === 'left' || position === 'right') {
+        if (arrow === 'top') {
+          bgStyle.top = positionMargin;
+        }
+        if (arrow === 'bottom') {
+          bgStyle.top = null;
+          bgStyle.bottom = positionMargin - 8;
+        }
+      }
+      const bgStyleTopOrBottomBase = {
+        left: '50%',
+        marginLeft: -11,
+        borderLeft: bgTransBorder,
+        borderRight: bgTransBorder,
+      };
+      if (position === 'top') {
+        bgStyle = { ...bgStyle, ...bgStyleTopOrBottomBase, bottom: -11, borderTop: bgColorBorder };
+      }
+      if (position === 'bottom') {
+        bgStyle = { ...bgStyle, ...bgStyleTopOrBottomBase, top: -11, borderBottom: bgColorBorder };
+      }
+      if (position === 'top' || position === 'bottom') {
+        if (arrow === 'right') {
+          bgStyle.left = null;
+          bgStyle.right = positionMargin;
+          bgStyle.marginLeft = 0;
+        }
+        if (arrow === 'left') {
+          bgStyle.left = positionMargin;
+          bgStyle.marginLeft = 0;
+        }
+      }
+      return { ...baseStyle, ...bgStyle };
     }
-  }
-  return { ...baseStyle, ...fgStyle };
-}
-if (bg) {
-  bgStyle.zIndex = 55;
-  const bgBorderColor = newArrowStyle.borderColor ? newArrowStyle.borderColor : 'transparent';
-  const bgColorBorder = `11px solid ${bgBorderColor}`;
-  const bgTransBorder = '9px solid transparent';
-  const bgStyleLeftOrRightBase = {
-    top: '50%',
-    borderTop: bgTransBorder,
-    borderBottom: bgTransBorder,
-    marginTop: -8,
-  };
-  if (position === 'left') {
-    bgStyle = { ...bgStyle, ...bgStyleLeftOrRightBase, right: -11, borderLeft: bgColorBorder };
-  }
-  if (position === 'right') {
-    bgStyle = { ...bgStyle, ...bgStyleLeftOrRightBase, left: -11, borderRight: bgColorBorder };
-  }
-  if (position === 'left' || position === 'right') {
-    if (arrow === 'top') {
-      bgStyle.top = positionMargin;
-    }
-    if (arrow === 'bottom') {
-      bgStyle.top = null;
-      bgStyle.bottom = positionMargin - 8;
-    }
-  }
-  const bgStyleTopOrBottomBase = {
-    left: '50%',
-    marginLeft: -11,
-    borderLeft: bgTransBorder,
-    borderRight: bgTransBorder,
-  };
-  if (position === 'top') {
-    bgStyle = { ...bgStyle, ...bgStyleTopOrBottomBase, bottom: -11, borderTop: bgColorBorder };
-  }
-  if (position === 'bottom') {
-    bgStyle = { ...bgStyle, ...bgStyleTopOrBottomBase, top: -11, borderBottom: bgColorBorder };
-  }
-  if (position === 'top' || position === 'bottom') {
-    if (arrow === 'right') {
-      bgStyle.left = null;
-      bgStyle.right = positionMargin;
-      bgStyle.marginLeft = 0;
-    }
-    if (arrow === 'left') {
-      bgStyle.left = positionMargin;
-      bgStyle.marginLeft = 0;
-    }
-  }
-  return { ...baseStyle, ...bgStyle };
-}
-return null;
-},
+    return null;
+  },
 );
 
 class ToolTip extends Component {
@@ -245,42 +253,26 @@ class ToolTip extends Component {
       position: props.position,
       arrow: props.arrow,
     };
+    this.reposition = this.reposition.bind(this);
   }
 
   componentDidMount() {
     this.forceUpdate();
   }
 
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     this.setState({
       position: nextProps.position,
       arrow: nextProps.arrow,
     });
   }
 
-  componentDidUpdate() {
-    if (this.ref) {
-      const { fallbackPosition, fallbackArrow } = this.props;
-      if (this.isOffScreen()) {
-        this.setState({
-          position: fallbackPosition,
-          arrow: fallbackArrow,
-        })
-      }
-    }
-  }
-
-  isOffScreen() {
-    let offScreen = false;
-    const { position } = this.state;
-    const elementRect = this.ref.getBoundingClientRect();
-    const bodyRect = document.body.getBoundingClientRect();
-    if (position === 'left' && (elementRect.left - bodyRect.left) < 0) {
-      offScreen = true;
-    } else if (position === 'right' && window.innerWidth < (elementRect.left - bodyRect.left) + this.ref.offsetWidth) {
-      offScreen = true;
-    }
-    return offScreen;
+  reposition() {
+    const { fallbackPosition, fallbackArrow } = this.props;
+    this.setState({
+      position: fallbackPosition,
+      arrow: fallbackArrow
+    });
   }
 
   getContainerSize() {
@@ -303,40 +295,41 @@ class ToolTip extends Component {
     const { style: containerStyle, arrowStyle } = style;
     return (
       <ContainerDiv
-    style={containerStyle}
-    visible={visible}
-    innerRef={(ref) => {
-      this.ref = ref;
-    }}
-    transition={transition}
-    targetElm={targetElm}
-    position={position}
-    arrow={arrow}
-    containerSize={this.getContainerSize()}
-    positionMargin={positionMargin}
-    >
-    {this.props.arrow ? (
-      <div>
-      <Arrow
-      fg
-    arrowStyle={arrowStyle}
-    position={position}
-    arrow={arrow}
-    positionMargin={positionMargin}
-    />
-    <Arrow
-    bg
-    arrowStyle={arrowStyle}
-    position={position}
-    arrow={arrow}
-    positionMargin={positionMargin}
-    />
-    </div>)
-  : null
-  }
-    {this.props.children}
-  </ContainerDiv>
-  );
+        style={containerStyle}
+        visible={visible}
+        innerRef={(ref) => {
+          this.ref = ref;
+        }}
+        transition={transition}
+        targetElm={targetElm}
+        position={position}
+        arrow={arrow}
+        containerSize={this.getContainerSize()}
+        positionMargin={positionMargin}
+        reposition={this.reposition}
+      >
+        {this.props.arrow ? (
+            <div>
+              <Arrow
+                fg
+                arrowStyle={arrowStyle}
+                position={position}
+                arrow={arrow}
+                positionMargin={positionMargin}
+              />
+              <Arrow
+                bg
+                arrowStyle={arrowStyle}
+                position={position}
+                arrow={arrow}
+                positionMargin={positionMargin}
+              />
+            </div>)
+          : null
+        }
+        {this.props.children}
+      </ContainerDiv>
+    );
   }
 }
 
