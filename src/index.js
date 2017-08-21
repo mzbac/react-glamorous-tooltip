@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import glamorous from 'glamorous';
 
+const checkWindowPositionForContainer = ({ containerPosition, containerSize, positionMargin, position }) => {
+  if (position === 'top' || position === 'bottom') {
+    if (containerPosition.left < 0) {
+      return { ...containerPosition, left: positionMargin }
+    } else {
+      const rightOffset = containerPosition.left + containerSize.width - window.innerWidth;
+      if (rightOffset > 0) {
+        return { ...containerPosition, left: (window.innerWidth - containerSize.width - positionMargin) }
+      }
+    }
+  }
+  return containerPosition;
+};
+
 const getContainerPosition = ({ position, arrow, targetElm, containerSize, positionMargin }) => {
   const targetElmPosition = targetElm.getBoundingClientRect();
   const scrollY = (window.scrollY !== undefined) ? window.scrollY : window.pageYOffset;
@@ -100,10 +114,22 @@ const getContainerPosition = ({ position, arrow, targetElm, containerSize, posit
     left: leftWhenPositionRight,
   };
 };
-
+const isOffScreen = (position, containerPosition, containerSize) => {
+  let offScreen = false;
+  if (position === "left" && checkedContainerPosition.left < 0) {
+    offScreen = true;
+  }
+  if (
+    position === "right" &&
+    window.innerWidth < checkedContainerPosition.left + containerSize.width
+  ) {
+    offScreen = true;
+  }
+  return offScreen;
+};
 const ContainerDiv = glamorous.div((props) => {
     const { transition, visible, reposition, style, ...restProps } = props;
-    const { targetElm, position } = restProps;
+    const { targetElm, position, containerSize } = restProps;
     if (!targetElm) return { display: 'none' };
     const baseStyle = {
       position: 'absolute',
@@ -118,15 +144,10 @@ const ContainerDiv = glamorous.div((props) => {
       ...style,
     };
     const containerPosition = getContainerPosition(restProps);
-    if (position === "left" && containerPosition.left < 0) {
-      reposition();
-    } else if (
-      position === "right" &&
-      window.innerWidth < containerPosition.left + targetElm.offsetWidth
-    ) {
-      reposition();
-    }
-    return { ...baseStyle, ...containerPosition };
+    const checkedContainerPosition = checkWindowPositionForContainer({ ...restProps, containerPosition });
+    if (isOffScreen(position, checkedContainerPosition, containerSize)) reposition();
+
+    return { ...baseStyle, ...checkedContainerPosition };
   },
 );
 
