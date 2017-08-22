@@ -6,7 +6,8 @@
   "scripts": {
     "prebuild": "rimraf lib/*",
     "build": "babel --out-dir lib src",
-    "test": "jest",
+    "test": "jest --config=jest.config.json",
+    "test:coverage": "jest --config=jest.config.json --coverage && open coverage/index.html",
     "prepublish": "npm run build"
   },
   "repository": {

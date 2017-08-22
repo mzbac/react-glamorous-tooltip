@@ -1,5 +1,7 @@
 # react-glamorous-tooltip
 
+[![Build Status](https://travis-ci.org/mzbac/react-glamorous-tooltip.svg?branch=master)](https://travis-ci.org/mzbac/react-glamorous-tooltip)
+
 ## Installation
 ```sh
 npm install react-glamorous-tooltip

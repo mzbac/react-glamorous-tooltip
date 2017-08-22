@@ -1,4 +1,3 @@
 {
-  "testEnvironment": "node",
   "rootDir": "./src"
 }
