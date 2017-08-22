@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "rimraf lib/*",
     "build": "babel --out-dir lib src",
+    "test": "jest",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -25,12 +26,17 @@
   "homepage": "https://github.com/mzbac/react-glamorous-tooltip#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-jest": "^20.0.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
+    "jest": "^20.0.4",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-test-renderer": "^15.6.1",
     "rimraf": "^2.6.1"
   },
   "dependencies": {

@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip should enforce a single child 1`] = `
+"Warning: Failed prop type: Invalid prop \`children\` of type \`array\` supplied to \`ToolTip\`, expected a single ReactElement.
+    in ToolTip"
+`;
+
+exports[`Tooltip should enforce a target element 1`] = `
+"Warning: Failed prop type: The prop \`targetElm\` is marked as required in \`ToolTip\`, but its value is \`undefined\`.
+    in ToolTip"
+`;
+
+exports[`Tooltip should render Tooltip 1`] = `
+<App>
+  <div>
+    <ToolTip
+      arrow="center"
+      fallbackArrow="center"
+      fallbackPosition="bottom"
+      position="bottom"
+      positionMargin={15}
+      style={
+        Object {
+          "arrowStyle": Object {},
+          "style": Object {},
+        }
+      }
+      targetElm={
+        <h2>
+          target element
+        </h2>
+      }
+      transition="all"
+      transitionTime=".3s"
+      visible={true}
+    >
+      <glamorous(div)
+        arrow="center"
+        containerSize={
+          Object {
+            "height": 0,
+            "width": 0,
+          }
+        }
+        innerRef={[Function]}
+        position="bottom"
+        positionMargin={15}
+        setIsOffScreen={[Function]}
+        style={Object {}}
+        targetElm={
+          <h2>
+            target element
+          </h2>
+        }
+        transition="all"
+        transitionTime=".3s"
+        visible={true}
+      >
+        <div
+          className="css-1dbg8ld"
+          style={Object {}}
+        >
+          <glamorous(div)>
+            <div
+              className="css-7ah4sc"
+            >
+              <glamorous(span)
+                arrow="center"
+                arrowStyle={Object {}}
+                fg={true}
+                position="bottom"
+                positionMargin={15}
+                transitionTime=".3s"
+              >
+                <span
+                  className="css-1x2iiwu"
+                />
+              </glamorous(span)>
+              <glamorous(span)
+                arrow="center"
+                arrowStyle={Object {}}
+                bg={true}
+                position="bottom"
+                positionMargin={15}
+                transitionTime=".3s"
+              >
+                <span
+                  className="css-4c7gqo"
+                />
+              </glamorous(span)>
+            </div>
+          </glamorous(div)>
+          <div
+            className="card"
+            style={
+              Object {
+                "width": "20rem",
+              }
+            }
+          >
+            <div
+              className="card-body"
+            >
+              <h4
+                className="card-title"
+              >
+                Tooltip title
+              </h4>
+              <p
+                className="card-text"
+              >
+                Some quick example text to build on the ToolTip title and make up the bulk of the Tooltip's content.
+              </p>
+              <a
+                className="btn btn-primary"
+                href="#"
+              >
+                Go somewhere
+              </a>
+            </div>
+          </div>
+        </div>
+      </glamorous(div)>
+    </ToolTip>
+    <h2>
+      target element
+    </h2>
+  </div>
+</App>
+`;

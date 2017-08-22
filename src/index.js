@@ -92,7 +92,7 @@ class ToolTip extends Component {
 
 ToolTip.propTypes = {
   visible: PropTypes.bool,
-  targetElm: PropTypes.object, // eslint-disable-line
+  targetElm: PropTypes.object.isRequired, // eslint-disable-line
   position: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   fallbackPosition: PropTypes.oneOf(['top', 'right', 'bottom', 'left']),
   arrow: PropTypes.oneOf([null, 'center', 'top', 'right', 'bottom', 'left']),
@@ -105,7 +105,6 @@ ToolTip.propTypes = {
 };
 ToolTip.defaultProps = {
   visible: false,
-  targetElm: null,
   position: 'right',
   fallbackPosition: 'bottom',
   fallbackArrow: 'center',

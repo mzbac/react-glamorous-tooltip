@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils checkWindowPositionForContainer should return correct containerPosition  1`] = `
+Object {
+  "left": 93,
+  "top": -197,
+}
+`;
+
+exports[`utils checkWindowPositionForContainer should return correct containerPosition when container is on screen  1`] = `
+Object {
+  "left": 1,
+}
+`;
+
+exports[`utils checkWindowPositionForContainer should return correct containerPosition when container's left is off screen 1`] = `
+Object {
+  "left": 7,
+}
+`;
+
+exports[`utils checkWindowPositionForContainer should return correct containerPosition when container's right is off screen 1`] = `
+Object {
+  "left": -207,
+}
+`;
+
+exports[`utils isOffScreen should return false when container is on screen  1`] = `false`;
+
+exports[`utils isOffScreen should return true when container's left is off screen  1`] = `true`;
+
+exports[`utils isOffScreen should return true when container's right is off screen  1`] = `true`;
