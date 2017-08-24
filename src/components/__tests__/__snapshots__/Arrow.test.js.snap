@@ -1,0 +1,715 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Arrow should render bg Arrow with default props 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  bg={true}
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position bottom and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  left: 50%;
+  margin-left: -9px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  top: -11px;
+  border-bottom: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={true}
+  fg={false}
+  position="bottom"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position bottom and arrow left 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  left: -1px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  top: -11px;
+  border-bottom: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="left"
+  bg={true}
+  fg={false}
+  position="bottom"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position bottom and arrow right 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  top: -11px;
+  border-bottom: 11px solid rgba(0,0,0,.4);
+  right: -1px;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="right"
+  bg={true}
+  fg={false}
+  position="bottom"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position left and arrow bottom 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  right: -11px;
+  border-left: 11px solid rgba(0,0,0,.4);
+  bottom: 0;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="bottom"
+  bg={true}
+  fg={false}
+  position="left"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position left and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  top: calc(50% - 9px);
+  right: -11px;
+  border-left: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={true}
+  fg={false}
+  position="left"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position left and arrow top 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  top: 1px;
+  right: -11px;
+  border-left: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="top"
+  bg={true}
+  fg={false}
+  position="left"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position right and arrow bottom 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  left: -11px;
+  border-right: 11px solid rgba(0,0,0,.4);
+  bottom: 0;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="bottom"
+  bg={true}
+  fg={false}
+  position="right"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position right and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  top: calc(50% - 9px);
+  left: -11px;
+  border-right: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={true}
+  fg={false}
+  position="right"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position right and arrow top 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  top: 1px;
+  left: -11px;
+  border-right: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="top"
+  bg={true}
+  fg={false}
+  position="right"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position top and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  left: 50%;
+  margin-left: -9px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  bottom: -11px;
+  border-top: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={true}
+  fg={false}
+  position="top"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position top and arrow left 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  left: -1px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  bottom: -11px;
+  border-top: 11px solid rgba(0,0,0,.4);
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="left"
+  bg={true}
+  fg={false}
+  position="top"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render bg Arrow with position top and arrow right 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 55;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  bottom: -11px;
+  border-top: 11px solid rgba(0,0,0,.4);
+  right: -1px;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="right"
+  bg={true}
+  fg={false}
+  position="top"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with default props 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  fg={true}
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position bottom and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  left: 50%;
+  margin-left: -8px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -10px;
+  border-bottom: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={false}
+  fg={true}
+  position="bottom"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position bottom and arrow left 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -10px;
+  border-bottom: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="left"
+  bg={false}
+  fg={true}
+  position="bottom"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position bottom and arrow right 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -10px;
+  border-bottom: 10px solid #fff;
+  right: 0px;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="right"
+  bg={false}
+  fg={true}
+  position="bottom"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position left and arrow bottom 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  right: -10px;
+  border-left: 10px solid #fff;
+  bottom: 1px;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="bottom"
+  bg={false}
+  fg={true}
+  position="left"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position left and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  top: calc(50% - 8px);
+  right: -10px;
+  border-left: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={false}
+  fg={true}
+  position="left"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position left and arrow top 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  top: 2px;
+  right: -10px;
+  border-left: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="top"
+  bg={false}
+  fg={true}
+  position="left"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position right and arrow bottom 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  left: -10px;
+  border-right: 10px solid #fff;
+  bottom: 1px;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="bottom"
+  bg={false}
+  fg={true}
+  position="right"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position right and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  top: calc(50% - 8px);
+  left: -10px;
+  border-right: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={false}
+  fg={true}
+  position="right"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position right and arrow top 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  top: 2px;
+  left: -10px;
+  border-right: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="top"
+  bg={false}
+  fg={true}
+  position="right"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position top and arrow center 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  left: 50%;
+  margin-left: -8px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -10px;
+  border-top: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="center"
+  bg={false}
+  fg={true}
+  position="top"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position top and arrow left 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -10px;
+  border-top: 10px solid #fff;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="left"
+  bg={false}
+  fg={true}
+  position="top"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
+
+exports[`Arrow should render fg Arrow with position top and arrow right 1`] = `
+.glamor-0,
+[data-glamor-0] {
+  position: absolute;
+  content: "";
+  transition: all undefined ease-in-out;
+  z-index: 60;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  bottom: -10px;
+  border-top: 10px solid #fff;
+  right: 0px;
+  -webkit-transition: all undefined ease-in-out;
+  -moz-transition: all undefined ease-in-out;
+}
+
+<glamorous(span)
+  arrow="right"
+  bg={false}
+  fg={true}
+  position="top"
+>
+  <span
+    className="glamor-0"
+  />
+</glamorous(span)>
+`;
